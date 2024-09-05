@@ -1,0 +1,35 @@
+.note-container{
+ margin: 0 0 10px 0;
+ border: 1px solid rgba(0, 0, 0, 0.527);
+ border-radius: 6px;
+ padding: 5px 10px;
+}
+.note-title{
+    margin: 0px 0px 10px 0px;
+    padding:none;
+    font-weight: bold;
+}
+.note-content{
+    margin: 0px 0px 10px 0px;
+    padding:none;
+}
+.note-date{
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    margin: 0 0 10px 0
+}
+
+.delete-button{
+    color: white;
+    background-color: rgb(252, 76, 56);
+    border: none;
+    border-radius: 6px;
+    width: 90px;
+    height: 30px;
+    /* transition: background-color 0.2s 'ease-in-out'; */
+}
+.delete-button:hover{
+    background-color: rgb(243, 67, 48);
+    cursor: pointer;
+    
+}
