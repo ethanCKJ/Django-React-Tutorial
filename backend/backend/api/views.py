@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics
 from .serializers import UserSerializer, NoteSerializer
@@ -32,6 +31,6 @@ class NoteDelete(generics.DestroyAPIView):
         return Note.objects.filter(author=user)
 
 class CreateUserView(generics.CreateAPIView):
-    queryset = User.objects.all() # Look at this to avoid making duplicate users
+    queryset = User.objects.all() # Not used but required by Django inheritance 
     serializer_class = UserSerializer  # What data to make a user.
     permission_classes = [AllowAny] # Anyone can use this view to create new user

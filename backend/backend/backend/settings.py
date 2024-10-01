@@ -94,18 +94,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+# Postgre database hosted on choreo. Free version requires manual turn on every hour to run.
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv("DEFAULT_DB"),
+#         "USER": os.getenv("DB_DEFAULT_USER"),
+#         "HOST": os.getenv("DB_HOST"),
+#         "PORT": os.getenv("DB_PORT"),
+#         "PASSWORD": os.getenv("DB_PASSWORD")
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("DEFAULT_DB"),
-        "USER": os.getenv("DB_DEFAULT_USER"),
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT"),
-        "PASSWORD": os.getenv("DB_PASSWORD")
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3", # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
     }
 }
 # print(os.getenv("DEFAULT_DB")) # Works regarldess of .env location
