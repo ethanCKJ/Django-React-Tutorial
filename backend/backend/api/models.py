@@ -10,4 +10,4 @@ class Note (models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="notes") # self or cascade
 
     def __str__(self):
-        return self.title
+        return 'title: ' + self.title + 'content: ' + self.content

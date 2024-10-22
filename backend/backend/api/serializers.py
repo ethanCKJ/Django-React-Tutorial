@@ -8,8 +8,8 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ["id", "username", "password"]
         extra_kwargs = {"password": {"write_only":True}}
-
-    def create(self, validated_data):
+        
+    def create(self, validated_data: dict):
         user = User.objects.create_user(**validated_data)
         return user
 
@@ -18,3 +18,12 @@ class NoteSerializer(serializers.ModelSerializer):
         model = Note
         fields = ['id', 'title', 'content', 'created_at', 'author']
         extra_kwargs = {"author": {"read_only":True}}
+    
+    def create(self, validated_data):
+        return Note.objects.create(**validated_data)
+    
+    def update(self, instance: Note, validated_data: dict):
+        instance.title = validated_data.get('title', instance.title)
+        instance.content = validated_data.get('content', instance.content)
+        instance.save()
+        return instance

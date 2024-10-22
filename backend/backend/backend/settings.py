@@ -112,6 +112,17 @@ DATABASES = {
                  # If one doesn't exist, it will be created at migration time.
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.getenv('DEFAULT_DB_SQL'),
+#         'USER': os.getenv('DB_DEFAULT_USER_SQL'),
+#         'HOST': os.getenv('DB_HOST_SQL'),
+#         'PORT':  os.getenv('DB_PORT_SQL'),
+#         'PASSWORD': os.getenv('DB_PASSWORD_SQL')
+#     }
+# }
 # print(os.getenv("DEFAULT_DB")) # Works regarldess of .env location
 
 # Password validation
